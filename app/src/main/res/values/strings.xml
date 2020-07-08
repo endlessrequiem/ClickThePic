@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">ClickThePic</string>
+    <string name="start">Start</string>
+    <string name="refreshDebug">Refresh</string>
+    <string name="defaultScore">Score: 0</string>
+    <string name="defaultTimer">Time Left: 0</string>
+    <string name="score">Score:</string>
+    <string name="timer">Timer:</string>
+    <string name="button">button</string>
+</resources>
