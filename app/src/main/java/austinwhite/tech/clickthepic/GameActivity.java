@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
@@ -47,11 +48,14 @@ public class GameActivity extends MainActivity {
                 gameObject.setEnabled(false);
                 gameObject2.setEnabled(false);
                 gameObject3.setEnabled(false);
+                refreshDebug.setVisibility(View.VISIBLE);
+
             }
 
         }.start();
 
         refreshDebug = findViewById(R.id.refreshDebug);
+        refreshDebug.setVisibility(View.GONE);
         refreshDebug.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -76,6 +80,9 @@ public class GameActivity extends MainActivity {
                 int i = a[0]++;
                 score.setText(getString(R.string.score) + " " + i);
                 gameObject.setVisibility(View.GONE);
+
+                scoreCheck(i, countDown);
+
             }
         });
         gameObject2.setOnClickListener(new View.OnClickListener() {
@@ -85,6 +92,8 @@ public class GameActivity extends MainActivity {
                 int i = a[0]++;
                 score.setText(getString(R.string.score) + " " + i);
                 gameObject2.setVisibility(View.GONE);
+
+                scoreCheck(i, countDown);
 
             }
         });
@@ -96,12 +105,30 @@ public class GameActivity extends MainActivity {
                 score.setText(getString(R.string.score) + " " + i);
                 gameObject3.setVisibility(View.GONE);
 
+                scoreCheck(i, countDown);
+
             }
         });
 
-        //TODO: ADD PROCESS FOR RESETTING RANDOM BUTTON POSITION AFTER SCORE INCREMENTS OF 3, ALSO NEEDS TO RESET THE TIMER
 
+    }
 
+    private void scoreCheck(int i, CountDownTimer countDown) {
+        if (i % 3 == 0) {
+            spawnButtons();
+            gameObject.setEnabled(true);
+            gameObject.setVisibility(View.VISIBLE);
+
+            gameObject2.setEnabled(true);
+            gameObject2.setVisibility(View.VISIBLE);
+
+            gameObject3.setEnabled(true);
+            gameObject3.setVisibility(View.VISIBLE);
+
+            countDown.start();
+        } else {
+            Log.i("Debug Check", score.getText().toString());
+        }
 
     }
 
