@@ -19,6 +19,7 @@
         android:layout_marginEnd="157dp"
         android:layout_marginBottom="202dp"
         android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
         android:fontFamily="@font/permanent_marker"
         android:text="@string/refreshDebug"
         app:layout_constraintBottom_toTopOf="@+id/timer"
@@ -28,6 +29,7 @@
 
     <ImageButton
         android:id="@+id/gameObject"
+        style="@android:style/Widget.DeviceDefault.ImageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="0dp"
@@ -38,6 +40,7 @@
 
     <ImageButton
         android:id="@+id/gameObject2"
+        style="@android:style/Widget.DeviceDefault.ImageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="0dp"
@@ -48,6 +51,7 @@
 
     <ImageButton
         android:id="@+id/gameObject3"
+        style="@android:style/Widget.DeviceDefault.ImageButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_x="0dp"
@@ -68,7 +72,7 @@
         android:text="@string/defaultScore"
         android:textAlignment="textStart"
         android:textColor="#FFFFFF"
-        android:textSize="36sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -86,7 +90,7 @@
         android:text="@string/defaultTimer"
         android:textAlignment="textStart"
         android:textColor="#FFFFFF"
-        android:textSize="36sp"
+        android:textSize="30sp"
         app:layout_constraintBottom_toTopOf="@+id/score"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
