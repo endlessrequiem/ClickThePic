@@ -44,9 +44,9 @@ public class GameActivity extends MainActivity {
 
             public void onFinish() {
                 Toast.makeText(getApplicationContext(), "You Lose", Toast.LENGTH_SHORT).show();
-                gameObject.setEnabled(false);
-                gameObject2.setEnabled(false);
-                gameObject3.setEnabled(false);
+                gameObject.setVisibility(View.GONE);
+                gameObject2.setVisibility(View.GONE);
+                gameObject3.setVisibility(View.GONE);
                 refreshDebug.setVisibility(View.VISIBLE);
 
             }
@@ -124,6 +124,7 @@ public class GameActivity extends MainActivity {
             gameObject3.setEnabled(true);
             gameObject3.setVisibility(View.VISIBLE);
 
+            countDown.cancel();
             countDown.start();
         } else {
             Log.i("Debug Check", score.getText().toString());
