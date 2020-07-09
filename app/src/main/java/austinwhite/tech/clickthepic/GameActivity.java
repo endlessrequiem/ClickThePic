@@ -25,6 +25,7 @@ public class GameActivity extends MainActivity {
     Button refreshDebug;
     TextView score;
     TextView timer;
+    TextView gameOver;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +35,8 @@ public class GameActivity extends MainActivity {
 
         score = findViewById(R.id.score);
         timer = findViewById(R.id.timer);
+        gameOver = findViewById(R.id.gameOver);
+        gameOver.setVisibility(View.GONE);
 
         final CountDownTimer countDown = new CountDownTimer(6000, 1000) {
 
@@ -43,7 +46,7 @@ public class GameActivity extends MainActivity {
             }
 
             public void onFinish() {
-                Toast.makeText(getApplicationContext(), "You Lose", Toast.LENGTH_SHORT).show();
+                gameOver.setVisibility(View.VISIBLE);
                 gameObject.setVisibility(View.GONE);
                 gameObject2.setVisibility(View.GONE);
                 gameObject3.setVisibility(View.GONE);
