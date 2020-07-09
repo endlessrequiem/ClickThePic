@@ -36,6 +36,22 @@ public class GameActivity extends MainActivity {
         score = findViewById(R.id.score);
         timer = findViewById(R.id.timer);
 
+        final CountDownTimer countDown = new CountDownTimer(6000, 1000) {
+
+            @SuppressLint("SetTextI18n")
+            public void onTick(long millisUntilFinished) {
+                timer.setText(getString(R.string.timer) + " " + millisUntilFinished / 1000);
+            }
+
+            public void onFinish() {
+                Toast.makeText(getApplicationContext(), "You Lose", Toast.LENGTH_SHORT).show();
+                gameObject.setEnabled(false);
+                gameObject2.setEnabled(false);
+                gameObject3.setEnabled(false);
+            }
+
+        }.start();
+
         refreshDebug = findViewById(R.id.refreshDebug);
         refreshDebug.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,6 +67,8 @@ public class GameActivity extends MainActivity {
         gameObject = findViewById(R.id.gameObject);
         gameObject2 = findViewById(R.id.gameObject2);
         gameObject3 = findViewById(R.id.gameObject3);
+
+        spawnButtons();
 
         gameObject.setOnClickListener(new View.OnClickListener() {
             @SuppressLint("SetTextI18n")
@@ -82,56 +100,45 @@ public class GameActivity extends MainActivity {
             }
         });
 
+
+    }
+
+    private void spawnButtons() {
         final DisplayMetrics displaymetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
         WindowManager wm = (WindowManager) getSystemService(WINDOW_SERVICE);
         wm.getDefaultDisplay().getMetrics(displaymetrics);
 
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        Random R = new Random();
-                        final float dx = R.nextFloat() * displaymetrics.widthPixels;
-                        final float dy = R.nextFloat() * displaymetrics.heightPixels;
-                        gameObject.animate()
-                                .x(dx)
-                                .y(dy)
-                                .setDuration(0)
-                                .start();
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                Random R = new Random();
+                final float dx = R.nextFloat() * displaymetrics.widthPixels;
+                final float dy = R.nextFloat() * displaymetrics.heightPixels;
+                gameObject.animate()
+                        .x(dx)
+                        .y(dy)
+                        .setDuration(0)
+                        .start();
 
-                        final float dx2 = R.nextFloat() * displaymetrics.widthPixels;
-                        final float dy2 = R.nextFloat() * displaymetrics.heightPixels;
-                        gameObject2.animate()
-                                .x(dx2)
-                                .y(dy2)
-                                .setDuration(0)
-                                .start();
+                final float dx2 = R.nextFloat() * displaymetrics.widthPixels;
+                final float dy2 = R.nextFloat() * displaymetrics.heightPixels;
+                gameObject2.animate()
+                        .x(dx2)
+                        .y(dy2)
+                        .setDuration(0)
+                        .start();
 
-                        final float dx3 = R.nextFloat() * displaymetrics.widthPixels;
-                        final float dy3 = R.nextFloat() * displaymetrics.heightPixels;
-                        gameObject3.animate()
-                                .x(dx3)
-                                .y(dy3)
-                                .setDuration(0)
-                                .start();
-                    }
-                });
+                final float dx3 = R.nextFloat() * displaymetrics.widthPixels;
+                final float dy3 = R.nextFloat() * displaymetrics.heightPixels;
+                gameObject3.animate()
+                        .x(dx3)
+                        .y(dy3)
+                        .setDuration(0)
+                        .start();
             }
-
-    final CountDownTimer countDown = new CountDownTimer(6000, 1000) {
-
-        @SuppressLint("SetTextI18n")
-        public void onTick(long millisUntilFinished) {
-            timer.setText(getString(R.string.timer) + " " + millisUntilFinished / 1000);
-        }
-
-        public void onFinish() {
-            Toast.makeText(getApplicationContext(),"You Lose",Toast.LENGTH_SHORT).show();
-            gameObject.setEnabled(false);
-            gameObject2.setEnabled(false);
-            gameObject3.setEnabled(false);
-        }
-
-    }.start();
+        });
     }
+}
+
 
