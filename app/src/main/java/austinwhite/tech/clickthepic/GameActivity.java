@@ -15,7 +15,6 @@ import java.util.Random;
 
 //TODO: MAKE SURE BUTTONS SPAWN WITHIN THE LAYOUT
 //TODO: GRAPHICS
-//TODO: OPTIMIZE CODE
 
 
 public class GameActivity extends MainActivity {
