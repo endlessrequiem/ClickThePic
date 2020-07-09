@@ -10,7 +10,6 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 import java.util.Random;
 
 //TODO: MAKE SURE BUTTONS SPAWN WITHIN THE LAYOUT
@@ -81,7 +80,6 @@ public class GameActivity extends MainActivity {
                 int i = a[0]++;
                 score.setText(getString(R.string.score) + " " + i);
                 gameObject.setVisibility(View.GONE);
-
                 scoreCheck(i, countDown);
 
             }
@@ -93,7 +91,6 @@ public class GameActivity extends MainActivity {
                 int i = a[0]++;
                 score.setText(getString(R.string.score) + " " + i);
                 gameObject2.setVisibility(View.GONE);
-
                 scoreCheck(i, countDown);
 
             }
@@ -105,7 +102,6 @@ public class GameActivity extends MainActivity {
                 int i = a[0]++;
                 score.setText(getString(R.string.score) + " " + i);
                 gameObject3.setVisibility(View.GONE);
-
                 scoreCheck(i, countDown);
 
             }
