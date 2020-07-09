@@ -32,9 +32,9 @@
         android:layout_height="wrap_content"
         android:layout_x="0dp"
         android:layout_y="0dp"
-        android:background="#FFFFFF"
+        android:background="#00000000"
         android:contentDescription="@string/button"
-        android:src="@android:drawable/ic_delete" />
+        android:src="@drawable/ic_gameobj" />
 
     <ImageButton
         android:id="@+id/gameObject2"
@@ -42,9 +42,9 @@
         android:layout_height="wrap_content"
         android:layout_x="0dp"
         android:layout_y="0dp"
-        android:background="#FFFFFF"
+        android:background="#00000000"
         android:contentDescription="@string/button"
-        app:srcCompat="@android:drawable/presence_online" />
+        app:srcCompat="@drawable/ic_gameobj" />
 
     <ImageButton
         android:id="@+id/gameObject3"
@@ -52,9 +52,9 @@
         android:layout_height="wrap_content"
         android:layout_x="0dp"
         android:layout_y="0dp"
-        android:background="#FFFFFF"
+        android:background="#00000000"
         android:contentDescription="@string/button"
-        app:srcCompat="@android:drawable/presence_online" />
+        app:srcCompat="@drawable/ic_gameobj" />
 
     <TextView
         android:id="@+id/score"

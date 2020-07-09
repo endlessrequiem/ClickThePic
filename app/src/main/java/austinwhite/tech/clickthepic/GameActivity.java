@@ -14,7 +14,6 @@ import android.widget.Toast;
 import java.util.Random;
 
 //TODO: MAKE SURE BUTTONS SPAWN WITHIN THE LAYOUT
-//TODO: GRAPHICS
 
 
 public class GameActivity extends MainActivity {
@@ -38,7 +37,7 @@ public class GameActivity extends MainActivity {
         gameOver = findViewById(R.id.gameOver);
         gameOver.setVisibility(View.GONE);
 
-        final CountDownTimer countDown = new CountDownTimer(6000, 1000) {
+        final CountDownTimer countDown = new CountDownTimer(4000, 1000) {
 
             @SuppressLint("SetTextI18n")
             public void onTick(long millisUntilFinished) {
