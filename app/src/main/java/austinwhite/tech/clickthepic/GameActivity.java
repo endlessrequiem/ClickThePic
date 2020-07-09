@@ -12,7 +12,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import java.util.Random;
 
-//TODO: ADD PROCESS FOR RESETTING RANDOM BUTTON POSITION AFTER SCORE INCREMENTS OF 3, ALSO NEEDS TO RESET THE TIMER
 //TODO: MAKE SURE BUTTONS SPAWN WITHIN THE LAYOUT
 //TODO: GRAPHICS
 //TODO: OPTIMIZE CODE
@@ -99,6 +98,9 @@ public class GameActivity extends MainActivity {
 
             }
         });
+
+        //TODO: ADD PROCESS FOR RESETTING RANDOM BUTTON POSITION AFTER SCORE INCREMENTS OF 3, ALSO NEEDS TO RESET THE TIMER
+
 
 
     }
