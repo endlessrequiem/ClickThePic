@@ -4,7 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/startButton"
+        style="@android:style/Widget.Material.Button"
+        android:layout_width="124dp"
+        android:layout_height="63dp"
+        android:layout_marginStart="158dp"
+        android:layout_marginTop="95dp"
+        android:layout_marginEnd="158dp"
+        android:layout_marginBottom="417dp"
+        android:background="#000000"
+        android:fontFamily="@font/permanent_marker"
+        android:text="@string/start"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/titleView" />
 
     <TextView
         android:id="@+id/titleView"
@@ -14,26 +36,31 @@
         android:layout_marginTop="110dp"
         android:layout_marginEnd="85dp"
         android:layout_marginBottom="560dp"
+        android:fontFamily="@font/permanent_marker"
         android:text="@string/app_name"
         android:textAlignment="center"
-        android:textSize="46sp"
+        android:textAllCaps="false"
+        android:textColor="#FFFFFF"
+        android:textSize="64sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/startButton"
+    <TextView
+        android:id="@+id/footnote"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="158dp"
-        android:layout_marginTop="95dp"
-        android:layout_marginEnd="158dp"
-        android:layout_marginBottom="417dp"
-        android:text="@string/start"
-        android:textAlignment="center"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="366dp"
+        android:layout_marginEnd="135dp"
+        android:layout_marginBottom="16dp"
+        android:fontFamily="@font/chathura"
+        android:text="@string/footnote"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/titleView" />
+        app:layout_constraintTop_toBottomOf="@+id/startButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>
