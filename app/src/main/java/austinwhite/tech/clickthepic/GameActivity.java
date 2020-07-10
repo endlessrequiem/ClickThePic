@@ -43,7 +43,7 @@ public class GameActivity extends MainActivity {
 
 
 
-        final CountDownTimer countDown = new CountDownTimer(9000000, 1000) {
+        final CountDownTimer countDown = new CountDownTimer(4000, 1000) {
 
             @SuppressLint("SetTextI18n")
             public void onTick(long millisUntilFinished) {
