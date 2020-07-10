@@ -156,7 +156,7 @@ public class GameActivity extends MainActivity {
                 Random R = new Random();
                 final float dx = (float) (R.nextFloat() * displaymetrics.widthPixels / 1.1); //this is a buffer zone so that the buttons don't spawn halfway in
                 final float dy = (float) (R.nextFloat() * displaymetrics.heightPixels / 1.1);
-                positionCheck1.setText(String.valueOf(dx) + " " + dy); // for debug
+                positionCheck1.setText(dx + " " + dy); // for debug
                 gameObject.animate()
                         .x(dx)
                         .y(dy)
@@ -165,7 +165,7 @@ public class GameActivity extends MainActivity {
 
                 final float dx2 = (float) (R.nextFloat() * displaymetrics.widthPixels / 1.1);
                 final float dy2 = (float) (R.nextFloat() * displaymetrics.heightPixels / 1.1);
-                positionCheck2.setText(String.valueOf(dx2) + " " + dy2);
+                positionCheck2.setText(dx2 + " " + dy2);
 
                 gameObject2.animate()
                         .x(dx2)
@@ -175,7 +175,7 @@ public class GameActivity extends MainActivity {
 
                 final float dx3 = (float) (R.nextFloat() * displaymetrics.widthPixels / 1.1);
                 final float dy3 = (float) (R.nextFloat() * displaymetrics.heightPixels / 1.1);
-                positionCheck3.setText(String.valueOf(dx3) + " " + dy3);
+                positionCheck3.setText(dx3 + " " + dy3);
 
                 gameObject3.animate()
                         .x(dx3)
