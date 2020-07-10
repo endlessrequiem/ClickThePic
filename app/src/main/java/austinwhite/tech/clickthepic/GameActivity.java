@@ -12,7 +12,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import java.util.Random;
 
-//TODO: MAKE SURE BUTTONS SPAWN WITHIN THE LAYOUT
 
 
 public class GameActivity extends MainActivity {
