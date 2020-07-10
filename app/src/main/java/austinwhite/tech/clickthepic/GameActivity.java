@@ -131,7 +131,7 @@ public class GameActivity extends MainActivity {
             countDown.cancel();
             countDown.start();
         } else {
-            Log.i("Debug Check", score.getText().toString());
+            Log.i("Your", score.getText().toString());
         }
 
     }
