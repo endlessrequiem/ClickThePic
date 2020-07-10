@@ -6,7 +6,7 @@
     <string name="defaultTimer">Time Left: 0</string>
     <string name="gameOver">Game Over!</string>
     <string name="score">Score:</string>
-    <string name="timer">Timer:</string>
+    <string name="timer">Time Left:</string>
     <string name="button">button</string>
     <string name="footnote">by austinwhite.tech, 2020</string>
 </resources>
