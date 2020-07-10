@@ -24,6 +24,11 @@ public class GameActivity extends MainActivity {
     TextView score;
     TextView timer;
     TextView gameOver;
+    TextView positionCheck1;
+    TextView positionCheck2;
+    TextView positionCheck3;
+
+
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +41,9 @@ public class GameActivity extends MainActivity {
         gameOver = findViewById(R.id.gameOver);
         gameOver.setVisibility(View.GONE);
 
-        final CountDownTimer countDown = new CountDownTimer(4000, 1000) {
+
+
+        final CountDownTimer countDown = new CountDownTimer(9000000, 1000) {
 
             @SuppressLint("SetTextI18n")
             public void onTick(long millisUntilFinished) {
@@ -131,33 +138,46 @@ public class GameActivity extends MainActivity {
     }
 
     private void spawnButtons() {
+        positionCheck1 = findViewById(R.id.positionCheck1);
+        positionCheck1.setVisibility(View.GONE); // set these to visible for debugging
+        positionCheck2 = findViewById(R.id.positionCheck2);
+        positionCheck2.setVisibility(View.GONE);
+        positionCheck3 = findViewById(R.id.positionCheck3);
+        positionCheck3.setVisibility(View.GONE);
+
         final DisplayMetrics displaymetrics = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(displaymetrics);
         WindowManager wm = (WindowManager) getSystemService(WINDOW_SERVICE);
         wm.getDefaultDisplay().getMetrics(displaymetrics);
 
         runOnUiThread(new Runnable() {
+            @SuppressLint("SetTextI18n")
             @Override
             public void run() {
                 Random R = new Random();
-                final float dx = R.nextFloat() * displaymetrics.widthPixels;
-                final float dy = R.nextFloat() * displaymetrics.heightPixels;
+                final float dx = (float) (R.nextFloat() * displaymetrics.widthPixels / 1.1); //this is a buffer zone so that the buttons don't spawn halfway in
+                final float dy = (float) (R.nextFloat() * displaymetrics.heightPixels / 1.1);
+                positionCheck1.setText(String.valueOf(dx) + " " + dy); // for debug
                 gameObject.animate()
                         .x(dx)
                         .y(dy)
                         .setDuration(0)
                         .start();
 
-                final float dx2 = R.nextFloat() * displaymetrics.widthPixels;
-                final float dy2 = R.nextFloat() * displaymetrics.heightPixels;
+                final float dx2 = (float) (R.nextFloat() * displaymetrics.widthPixels / 1.1);
+                final float dy2 = (float) (R.nextFloat() * displaymetrics.heightPixels / 1.1);
+                positionCheck2.setText(String.valueOf(dx2) + " " + dy2);
+
                 gameObject2.animate()
                         .x(dx2)
                         .y(dy2)
                         .setDuration(0)
                         .start();
 
-                final float dx3 = R.nextFloat() * displaymetrics.widthPixels;
-                final float dy3 = R.nextFloat() * displaymetrics.heightPixels;
+                final float dx3 = (float) (R.nextFloat() * displaymetrics.widthPixels / 1.1);
+                final float dy3 = (float) (R.nextFloat() * displaymetrics.heightPixels / 1.1);
+                positionCheck3.setText(String.valueOf(dx3) + " " + dy3);
+
                 gameObject3.animate()
                         .x(dx3)
                         .y(dy3)
