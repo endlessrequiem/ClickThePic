@@ -11,7 +11,7 @@
     android:orientation="vertical">
 
     <Button
-        android:id="@+id/refreshDebug"
+        android:id="@+id/refreshGame"
         android:layout_width="116dp"
         android:layout_height="56dp"
         android:layout_marginStart="157dp"
@@ -111,7 +111,7 @@
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="40sp"
-        app:layout_constraintBottom_toTopOf="@+id/refreshDebug"
+        app:layout_constraintBottom_toTopOf="@+id/refreshGame"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

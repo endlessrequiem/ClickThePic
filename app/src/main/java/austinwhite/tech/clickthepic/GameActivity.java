@@ -19,7 +19,7 @@ public class GameActivity extends MainActivity {
     ImageButton gameObject;
     ImageButton gameObject2;
     ImageButton gameObject3;
-    Button refreshDebug;
+    Button refreshGame;
     TextView score;
     TextView timer;
     TextView gameOver;
@@ -54,22 +54,18 @@ public class GameActivity extends MainActivity {
                 gameObject.setVisibility(View.GONE);
                 gameObject2.setVisibility(View.GONE);
                 gameObject3.setVisibility(View.GONE);
-                refreshDebug.setVisibility(View.VISIBLE);
+                refreshGame.setVisibility(View.VISIBLE);
 
             }
 
         }.start();
 
-        refreshDebug = findViewById(R.id.refreshDebug);
-        refreshDebug.setVisibility(View.GONE);
-        refreshDebug.setOnClickListener(new View.OnClickListener() {
+        refreshGame = findViewById(R.id.refreshGame);
+        refreshGame.setVisibility(View.GONE);
+        refreshGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                finish();
-                overridePendingTransition(0, 0);
-                startActivity(getIntent());
-                overridePendingTransition(0, 0);
-                countDown.cancel();
+                Restart();
             }
         });
 
@@ -184,6 +180,10 @@ public class GameActivity extends MainActivity {
                         .start();
             }
         });
+    }
+
+    public void Restart() {
+        this.recreate();
     }
 }
 
