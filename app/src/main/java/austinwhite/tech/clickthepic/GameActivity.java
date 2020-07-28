@@ -32,6 +32,7 @@ public class GameActivity extends MainActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.game_activity);
+        final AnimationActivity animateThis = new AnimationActivity();
 
         final int[] a = {1};
 
@@ -55,6 +56,8 @@ public class GameActivity extends MainActivity {
                 gameObject2.setVisibility(View.GONE);
                 gameObject3.setVisibility(View.GONE);
                 refreshGame.setVisibility(View.VISIBLE);
+                animateThis.gameOverScaler(gameOver);
+                animateThis.refreshGameScaler(refreshGame);
 
             }
 
@@ -133,6 +136,8 @@ public class GameActivity extends MainActivity {
     }
 
     private void spawnButtons() {
+        final AnimationActivity animateButton = new AnimationActivity();
+
         positionCheck1 = findViewById(R.id.positionCheck1);
         positionCheck1.setVisibility(View.GONE); // set these to visible for debugging
         positionCheck2 = findViewById(R.id.positionCheck2);
@@ -180,6 +185,9 @@ public class GameActivity extends MainActivity {
                         .start();
             }
         });
+        animateButton.gameObjectScaler(gameObject);
+        animateButton.gameObject2Scaler(gameObject2);
+        animateButton.gameObject3Scaler(gameObject3);
     }
 
     public void Restart() {
