@@ -85,7 +85,7 @@ public class GameActivity extends MainActivity {
                 int i = a[0]++;
                 score.setText(getString(R.string.score) + " " + i);
                 gameObject.setVisibility(View.GONE);
-                scoreCheck(i, countDown);
+                scoreCheck(i, countDown, animateThis);
 
             }
         });
@@ -96,7 +96,7 @@ public class GameActivity extends MainActivity {
                 int i = a[0]++;
                 score.setText(getString(R.string.score) + " " + i);
                 gameObject2.setVisibility(View.GONE);
-                scoreCheck(i, countDown);
+                scoreCheck(i, countDown, animateThis);
 
             }
         });
@@ -107,7 +107,7 @@ public class GameActivity extends MainActivity {
                 int i = a[0]++;
                 score.setText(getString(R.string.score) + " " + i);
                 gameObject3.setVisibility(View.GONE);
-                scoreCheck(i, countDown);
+                scoreCheck(i, countDown, animateThis);
 
             }
         });
@@ -115,8 +115,9 @@ public class GameActivity extends MainActivity {
 
     }
 
-    private void scoreCheck(int i, CountDownTimer countDown) {
+    private void scoreCheck(int i, CountDownTimer countDown, AnimationActivity animateThis) {
         if (i % 3 == 0) {
+            animateThis.scoreScaler(score);
             spawnButtons();
             gameObject.setEnabled(true);
             gameObject.setVisibility(View.VISIBLE);

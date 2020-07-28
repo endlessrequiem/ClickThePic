@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
         startButton = findViewById(R.id.startButton);
         titleView = findViewById(R.id.titleView);
 
+        animateThis.titleScaler(titleView);
+
         startButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
