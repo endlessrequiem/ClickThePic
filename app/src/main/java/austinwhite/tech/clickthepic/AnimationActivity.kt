@@ -83,4 +83,5 @@ class AnimationActivity : AppCompatActivity() {
         animator.repeatMode = ObjectAnimator.REVERSE
         animator.start()
     }
+
 }
